@@ -26,6 +26,7 @@ import ExploreNow from "./pages/ExploreNow";
 import ResortDetails from "./Components/ResortDetail";
 import PlanMyTripForm from "./forms/PlanMyTripForm";
 import LearnMore from "./pages/LearnMore";
+import HoneymoonSpecialPackages from "./pages/HoneymoonSpecialPackages";
 
 
 
@@ -73,6 +74,9 @@ function App() {
 
         <Route path="/resort-detail/:id" element={<ResortDetails />} />
         <Route path="/get-a-quote" element={<PlanMyTripForm />} />
+
+        <Route path="/honeymoon-special-package" element={<HoneymoonSpecialPackages />} />
+
 
         
         

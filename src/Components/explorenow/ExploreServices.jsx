@@ -18,7 +18,8 @@ const ExploreServices = () => {
       desc: 'Explore breathtaking destinations across the globe with our expertly curated international tour packages.',
       features: ['Europe Tours', 'Asia Adventures', 'American Journeys'],
       emoji: '🌍',
-      popular: true
+      popular: true,
+      path:'/international'
     },
     {
       icon: <MapPin className="w-8 h-8 text-white" />,
@@ -28,7 +29,8 @@ const ExploreServices = () => {
       desc: 'Discover the incredible beauty of India with our comprehensive domestic holiday packages.',
       features: ['Kerala Backwaters', 'Rajasthan Heritage', 'Himalayan Treks'],
       emoji: '🏔️',
-      popular: false
+      popular: false,
+      path:'/domestic',
     },
     {
       icon: <Heart className="w-8 h-8 text-white" />,
@@ -38,38 +40,39 @@ const ExploreServices = () => {
       desc: 'Create unforgettable romantic memories together with our specially designed honeymoon packages.',
       features: ['Romantic Dinners', 'Couple Spa', 'Private Transfers'],
       emoji: '💕',
-      popular: true
+      popular: true,
+      path:'/honeymoon-special-package'
     },
-    {
-      icon: <Users className="w-8 h-8 text-white" />,
-      title: 'Group Tours',
-      bg: '#2C8780',
-      textColor: 'text-primaryHeading',
-      desc: 'Join like-minded travelers and make new friends with our exciting group tour packages.',
-      features: ['Family Groups', 'Corporate Tours', 'Student Trips'],
-      emoji: '👨‍👩‍👧‍👦',
-      popular: false
-    },
-    {
-      icon: <Compass className="w-8 h-8 text-white" />,
-      title: 'Adventure Tours',
-      bg: '#2C8780',
-      textColor: 'text-primaryHeading',
-      desc: 'Experience thrilling adventures and outdoor activities with our action-packed tour packages.',
-      features: ['Trekking Expeditions', 'River Rafting', 'Paragliding'],
-      emoji: '🏕️',
-      popular: false
-    },
-    {
-      icon: <Globe className="w-8 h-8 text-white" />,
-      title: 'Beach Holidays',
-      bg: '#2C8780',
-      textColor: 'text-primaryHeading',
-      desc: 'Relax and unwind at the world\'s most beautiful beaches with our tropical getaway packages.',
-      features: ['Maldives Resorts', 'Bali Escapes', 'Thailand Islands'],
-      emoji: '🏖️',
-      popular: false
-    }
+    // {
+    //   icon: <Users className="w-8 h-8 text-white" />,
+    //   title: 'Group Tours',
+    //   bg: '#2C8780',
+    //   textColor: 'text-primaryHeading',
+    //   desc: 'Join like-minded travelers and make new friends with our exciting group tour packages.',
+    //   features: ['Family Groups', 'Corporate Tours', 'Student Trips'],
+    //   emoji: '👨‍👩‍👧‍👦',
+    //   popular: false
+    // },
+    // {
+    //   icon: <Compass className="w-8 h-8 text-white" />,
+    //   title: 'Adventure Tours',
+    //   bg: '#2C8780',
+    //   textColor: 'text-primaryHeading',
+    //   desc: 'Experience thrilling adventures and outdoor activities with our action-packed tour packages.',
+    //   features: ['Trekking Expeditions', 'River Rafting', 'Paragliding'],
+    //   emoji: '🏕️',
+    //   popular: false
+    // },
+    // {
+    //   icon: <Globe className="w-8 h-8 text-white" />,
+    //   title: 'Beach Holidays',
+    //   bg: '#2C8780',
+    //   textColor: 'text-primaryHeading',
+    //   desc: 'Relax and unwind at the world\'s most beautiful beaches with our tropical getaway packages.',
+    //   features: ['Maldives Resorts', 'Bali Escapes', 'Thailand Islands'],
+    //   emoji: '🏖️',
+    //   popular: false
+    // }
   ];
  
   const handleGetQuoteClick = () => {
@@ -148,6 +151,8 @@ const ExploreServices = () => {
                 ))}
               </ul>
               <button
+              onClick={() => service.path && navigate(service.path)}
+              
                 className="w-full py-3 px-4 rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105"
                 style={{ backgroundColor: '#DC2626' }}
               >
