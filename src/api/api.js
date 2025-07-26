@@ -22,6 +22,9 @@ export const getHeroSection = (title) => api.get(`/hero-section/${title}`);
 
 export const getTestimonialVideo=()=> api.get('/testimonials');
 
+export const getBlogDetails=()=> api.get('/blog');
+
+
 
 
 

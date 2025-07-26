@@ -16,7 +16,7 @@ const BlogHero = () => {
         setLoading(true);
 
         const { data } = await getHeroSection("blog");
-        console.log(data);
+        // console.log(data);
 
         // Change videoUrl to video_url to match the API response
         setVideoUrl(data?.publicUrl[0]);

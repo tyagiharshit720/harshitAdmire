@@ -49,7 +49,7 @@ function App() {
         <Route path="/destination/:slug" element={
           <Navigate to={`/destinations/${useParams().slug}`} replace />
         } />
-        <Route path="/blog/top-10-hidden-gems-to-visit-in-india" element={<BlogDetails2 />} />
+        <Route path="/blog/details" element={<BlogDetails1 />} />
         <Route path="/international" element={<International />} />
         <Route path="/destinations/:slug" element={<DestinationDetail />} />
 
