@@ -2,8 +2,8 @@ import React from 'react';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import CallToAction from '../Components/learnmore/CallToAction';
-import SpecialHoneymoonDeals from '../Components/HoneymoonSpecialPackages/SpecialHoneymoonDeals';
 import HeroSection from '../Components/HoneymoonSpecialPackages/HeroSection';
+import SpecialHoneymoonDeals from '../Components/honeymoonSpecialPackages/SpecialHoneymoonDeals';
  
  
  
