@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, Link, Navigate } from "react-router-dom";
 import {
   FaPhone,
   FaMapMarkerAlt,
@@ -1365,9 +1365,12 @@ paymentModes: [
                     <button className="w-full mt-4 px-6 py-3 bg-[#E69233] text-white font-semibold rounded-lg hover:bg-[#d5822b] transition flex items-center justify-center">
                       <FaPhone className="mr-2" /> Book Now
                     </button>
-                    <button className="w-full mt-2 px-6 py-3 bg-white text-[#E69233] font-semibold rounded-lg border border-[#E69233] hover:bg-gray-50 transition flex items-center justify-center">
-                      Enquire Now
-                    </button>
+                    <button
+      className="w-full mt-2 px-6 py-3 bg-white text-[#E69233] font-semibold rounded-lg border border-[#E69233] hover:bg-gray-50 transition flex items-center justify-center"
+      onClick={() => navigate("/contact")}
+    >
+      Enquire Now
+    </button>
                   </div>
 
                   <div className="mt-8">
@@ -1378,7 +1381,7 @@ paymentModes: [
                       your holiday needs.
                     </p>
                     <div className="flex items-center text-[#E69233] font-medium">
-                      <FaPhone className="mr-2" /> +91 98765 43210
+                      <FaPhone className="mr-2" /> 1800-121-4252
                     </div>
                   </div>
                 </div>

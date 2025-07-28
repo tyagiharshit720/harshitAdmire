@@ -1,6 +1,7 @@
 import React from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import { Link } from 'react-router-dom';
 
 const ResortsSlider = () => {
   const [sliderRef] = useKeenSlider({
@@ -83,9 +84,9 @@ const ResortsSlider = () => {
 
 const ResortCard = ({ resort }) => {
   return (
-    <a 
+    <Link
       className="w-full block h-full group" 
-      href={`resort-detail/${resort.id}`}
+      to={`resort-detail/${resort.id}`}
     >
       <div className="h-[420px] max-w-sm flex flex-col justify-between rounded-lg shadow-lg p-2 relative bg-white transition-all duration-300 hover:scale-[1.02] group-hover:shadow-xl">
         {/* Discount Badge with animation */}
@@ -134,7 +135,7 @@ const ResortCard = ({ resort }) => {
           </button>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
