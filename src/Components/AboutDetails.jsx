@@ -129,7 +129,7 @@ const AboutDetails = () => {
             alt="Difference"
             loading="lazy"
             className="rounded-xl shadow-lg w-full h-auto"
-            src="/about2.png"
+            src="https://images.pexels.com/photos/2681319/pexels-photo-2681319.jpeg?auto=compress&cs=tinysrgb&w=600"
           />
         </div>
 
@@ -183,7 +183,7 @@ const AboutDetails = () => {
             alt="Why Choose Us"
             loading="lazy"
             className="rounded-xl shadow-lg w-full h-auto"
-            src="/about3.png"
+            src="https://images.pexels.com/photos/28832655/pexels-photo-28832655.jpeg"
           />
         </div>
 

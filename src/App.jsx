@@ -27,6 +27,8 @@ import ResortDetails from "./Components/ResortDetail";
 import PlanMyTripForm from "./forms/PlanMyTripForm";
 import LearnMore from "./pages/LearnMore";
 import HoneymoonSpecialPackages from "./pages/HoneymoonSpecialPackages";
+import PackageDetailsWithBooking from "./pages/OtherPackageDetails";
+import TourDetails from "./pages/TourDetails";
 
 
 
@@ -52,6 +54,7 @@ function App() {
         <Route path="/blog/details" element={<BlogDetails1 />} />
         <Route path="/international" element={<International />} />
         <Route path="/destinations/:slug" element={<DestinationDetail />} />
+        
 
 
          <Route path="/HomeStickyFormPage" element={<HomeStickyFormPage />} />
@@ -60,7 +63,7 @@ function App() {
         <Route path="/user-agreement" element={<UserAgreement />} />
 
 
-        <Route path="/destinations/:slug" element={<DestinationDetail />} />
+        {/* <Route path="/destinations/:slug" element={<DestinationDetail />} /> */}
 
 
         <Route path="/signin" element={<Login />} />
@@ -76,6 +79,12 @@ function App() {
         <Route path="/get-a-quote" element={<PlanMyTripForm />} />
 
         <Route path="/honeymoon-special-package" element={<HoneymoonSpecialPackages />} />
+        <Route path="/destinations/:slug" element={<TourDetails />} />
+<Route path="/destinations/:slug/detail" element={<DestinationDetail />} />
+
+
+
+
 
 
         
