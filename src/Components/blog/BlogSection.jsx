@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { BlogDetailsContext } from '../../context/blogContext.jsx';
 import { getBlogDetails } from "../../api/api.js";
 
 const BlogSection = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  
+  // Get the context values
+  const { setBlogDetails } = useContext(BlogDetailsContext);
 
   // Fetch blogs from API
   useEffect(() => {
@@ -15,6 +18,7 @@ const BlogSection = () => {
       try {
         setLoading(true);
         const response = await getBlogDetails();
+        console.log(response)
         
         const simplifiedBlogs = response.data.blogData.map(blog => ({
           id: blog._id,              
@@ -36,8 +40,11 @@ const BlogSection = () => {
   }, []);
 
   // Handle clicking on a blog card
-  const handleBlogClick = (blogId) => {
-    navigate(`/blog/${blogId}`);
+  const handleBlogClick = (blog) => {
+    // Update the context with the selected blog
+    setBlogDetails(blog);
+    // Navigate to the blog details page
+    navigate(`/blog/${blog.id}`);
   };
 
   // Show loading spinner while data loads
@@ -70,7 +77,7 @@ const BlogSection = () => {
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ scale: 1.02 }}
             className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer"
-            onClick={() => handleBlogClick(blog.id)}
+            onClick={() => handleBlogClick(blog)}
           >
             {/* Blog Image */}
             <img 
@@ -86,7 +93,13 @@ const BlogSection = () => {
               <p className="text-gray-600 line-clamp-3">
                 {blog.content.replace(/<[^>]*>/g, '')} {/* Remove HTML tags */}
               </p>
-              <button className="mt-4 text-yellow-600 font-medium">
+              <button 
+                className="mt-4 text-yellow-600 font-medium"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleBlogClick(blog);
+                }}
+              >
                 Read More →
               </button>
             </div>

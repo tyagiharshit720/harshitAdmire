@@ -80,7 +80,7 @@ const AboutDetails = () => {
         {/* About Us Section with Video */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <video
-            src="/about1.mp4"
+            src="https://images.pexels.com/photos/540977/pexels-photo-540977.jpeg"
             autoPlay
             loop
             muted

@@ -24,6 +24,10 @@ export const getTestimonialVideo=()=> api.get('/testimonials');
 
 export const getBlogDetails=()=> api.get('/blog');
 
+export const getBlogDetailsPage=()=> api.get('/blog/id');
+
+
+
 
 
 

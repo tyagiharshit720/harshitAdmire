@@ -5,6 +5,8 @@ import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { Link } from 'react-router-dom';
 
+import {getBlogDetailsPage} from '../../api/api.js'
+
 const BlogDetails1 = () => {
   const navigate = useNavigate();
   const [showShareDialog, setShowShareDialog] = useState(false);
@@ -21,6 +23,27 @@ const BlogDetails1 = () => {
   };
 
   // Set meta tags dynamically
+  // useEffect(() => {
+  //   document.title = blogData.title;
+    
+  //   const updateMetaTag = (property, content) => {
+  //     let tag = document.querySelector(`meta[property="${property}"]`);
+  //     if (!tag) {
+  //       tag = document.createElement('meta');
+  //       tag.setAttribute('property', property);
+  //       document.head.appendChild(tag);
+  //     }
+  //     tag.setAttribute('content', content);
+  //   };
+
+  //   updateMetaTag('og:title', blogData.title);
+  //   updateMetaTag('og:description', blogData.description);
+  //   updateMetaTag('og:image', blogData.imageUrl);
+  //   updateMetaTag('og:url', blogData.url);
+  //   updateMetaTag('twitter:card', 'summary_large_image');
+  // }, [blogData]);
+
+
   useEffect(() => {
     document.title = blogData.title;
     
@@ -40,6 +63,9 @@ const BlogDetails1 = () => {
     updateMetaTag('og:url', blogData.url);
     updateMetaTag('twitter:card', 'summary_large_image');
   }, [blogData]);
+
+
+
 
   const handleNativeShare = async () => {
     try {
