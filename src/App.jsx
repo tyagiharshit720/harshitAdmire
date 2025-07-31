@@ -51,7 +51,11 @@ function App() {
         <Route path="/destination/:slug" element={
           <Navigate to={`/destinations/${useParams().slug}`} replace />
         } />
-        <Route path="/blog/details" element={<BlogDetails1 />} />
+        {/* <Route path="/blog/details" element={<BlogDetails1 />} /> */}
+        <Route path="/blog/:id" element={<BlogDetails1 />} />
+
+
+
         <Route path="/international" element={<International />} />
         <Route path="/destinations/:slug" element={<DestinationDetail />} />
         

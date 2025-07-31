@@ -26,6 +26,8 @@ export const getBlogDetails=()=> api.get('/blog');
 
 export const getBlogDetailsPage=()=> api.get('/blog/id');
 
+// export const getdomesticDestinations=()=> api.get();
+
 
 
 

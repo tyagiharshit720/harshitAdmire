@@ -41,7 +41,6 @@ const BlogSection = () => {
 
   // Handle clicking on a blog card
   const handleBlogClick = (blog) => {
-    // Update the context with the selected blog
     setBlogDetails(blog);
     // Navigate to the blog details page
     navigate(`/blog/${blog.id}`);
@@ -95,7 +94,10 @@ const BlogSection = () => {
               </p>
               <button 
                 className="mt-4 text-yellow-600 font-medium"
-                onClick={(e) => { e.stopPropagation();  handleBlogClick(blog);  }}
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent card click from triggering
+                  handleBlogClick(blog);
+                }}
               >
                 Read More →
               </button>
