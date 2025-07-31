@@ -2,7 +2,10 @@ import axios from 'axios';
 const baseURL=import.meta.env.VITE_API_URL
 
 const api = axios.create({
+  // baseURL: "https://api.admireholidays.com",
+
   baseURL: `${baseURL}/api/v1`,
+
   headers: {
     'Content-Type': 'application/json',
   },
@@ -26,7 +29,7 @@ export const getBlogDetails=()=> api.get('/blog');
 
 export const getBlogDetailsPage=()=> api.get('/blog/id');
 
-// export const getdomesticDestinations=()=> api.get();
+export const getdomesticDestinations=(type)=> api.get(`/image-gallary/:${type}`);
 
 
 

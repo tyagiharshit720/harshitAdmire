@@ -154,7 +154,7 @@ const BlogDetails1 = () => {
     <div className="bg-gray-50 min-h-screen flex flex-col">
       <NavBar/>
       
-      <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="w-full mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: '95%' }}>
         <div className="flex justify-between items-center mb-8">
           <motion.button 
             onClick={() => navigate('/blog')}

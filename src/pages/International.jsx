@@ -34,6 +34,11 @@ const International = () => {
     fetchVideo();
   }, []);
 
+
+  //  for domestic
+
+ 
+
   return (
     <div>
       <NavBar />

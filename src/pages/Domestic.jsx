@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getHeroSection } from "../api/api";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import SubscribeUs from "../forms/SubscribeUs";
@@ -9,28 +8,32 @@ import TravelGallery from "../Components/TravelGallery";
 import DestinationGrid from "../Components/destinations/DestinationGrid";
 import { domesticDestinations } from "../data/destinations";
 import HeroReusable from "../Components/heroSection/HeroReusable";
+// import { getDestinationsData } from "../api/api";
 
 const Domestic = () => {
   const navigate = useNavigate();
   const [videoUrl, setVideoUrl] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [destinations, setDestinations] = useState([]);
 
   useEffect(() => {
-    const fetchVideo = async () => {
+    const fetchDomesticData = async () => {
       try {
         setLoading(true);
-        const { data } = await getHeroSection("domestic");
-        console.log(data);
-        setVideoUrl(data?.publicUrl[0]);
+        const response = await getDestinationsData("domestic");
+        
+      console.log( response);
+      console.log(response.data);
+        
       } catch (error) {
-        console.error("Error loading video:", error);
-        setVideoUrl(null); // Set to null if there's an error
+        console.error("Error loading domestic data:", error);
+        setDestinations(domesticDestinations);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchVideo();
+    fetchDomesticData();
   }, []);
 
   return (
@@ -43,11 +46,15 @@ const Domestic = () => {
       />
 
       <div className="py-12 bg-gray-50">
-        <DestinationGrid
-          destinations={domesticDestinations}
-          title="Popular Domestic Destinations"
-          type="domestic"
-        />
+        {loading ? (
+          <div className="text-center py-12">Loading destinations...</div>
+        ) : (
+          <DestinationGrid
+            destinations={destinations}
+            title="Popular Domestic Destinations"
+            type="domestic"
+          />
+        )}
       </div>
 
       <TravelGallery />

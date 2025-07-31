@@ -5,6 +5,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        'prose': '65ch',         // For optimal reading width
+        '8xl': '88rem',          // 1408px
+        '9xl': '96rem',          // 1536px
+        '10xl': '104rem',        // 1664px
+      },
       colors: {
         primaryHeading: '#261F55',
       },
@@ -26,6 +32,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('tailwindcss-animated') // Optional: for more animations
+    require('tailwindcss-animated')
   ],
 }

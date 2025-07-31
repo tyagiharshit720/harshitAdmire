@@ -23,7 +23,7 @@ const TravelEnquiryForm = ({ onClose }) => {
       setIsAnimating(true);
     }, 500);
 
-    // Focus on the first input when modal opens
+    
     if (modalRef.current) {
       modalRef.current.querySelector("input").focus();
     }

@@ -28,8 +28,7 @@ const Hero = () => {
       const { data } = await getHeroSection("home");
       console.log(data);
 
-      // Change videoUrl to video_url to match the API response
-      setVideoUrl(data?.publicUrl[0]);
+      setVideoUrl(data?.publicUrl?.[0] || "");
     } catch (error) {
       console.error("Error loading video:", error);
     } finally {
