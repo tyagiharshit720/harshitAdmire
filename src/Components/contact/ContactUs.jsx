@@ -80,6 +80,7 @@ const ContactUs = () => {
       await submitContactForm({
         name: `${firstName} ${lastName}`.trim(),
         email,
+        phone,
         subject,
         message
       });
@@ -239,7 +240,7 @@ const ContactUs = () => {
               <input
                 placeholder="Phone Number*"
                 className={inputClass}
-                type="text"
+                type="number"
                 name="phone"
                 maxLength="15"
                 value={formData.phone}

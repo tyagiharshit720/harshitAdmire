@@ -95,10 +95,7 @@ const BlogSection = () => {
               </p>
               <button 
                 className="mt-4 text-yellow-600 font-medium"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleBlogClick(blog);
-                }}
+                onClick={(e) => { e.stopPropagation();  handleBlogClick(blog);  }}
               >
                 Read More →
               </button>

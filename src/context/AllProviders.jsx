@@ -1,6 +1,6 @@
 // AllProviders.js
 import React from "react";
-import { BlogDetailsProvider } from "./BlogContext";
+import { BlogDetailsProvider } from "./blogContext";
 
 
 export const AllProviders = ({ children }) => {

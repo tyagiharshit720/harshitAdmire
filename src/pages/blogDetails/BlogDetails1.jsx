@@ -5,6 +5,8 @@ import NavBar from '../../Components/NavBar';
 import Footer from '../../Components/Footer';
 import { Link } from 'react-router-dom';
 
+
+
 import {getBlogDetailsPage} from '../../api/api.js'
 
 const BlogDetails1 = () => {
