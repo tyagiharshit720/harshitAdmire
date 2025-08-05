@@ -5,7 +5,8 @@ import "./index.css";
 import { AllProviders } from "./context/AllProviders";
 
 // ✅ Log environment variable BEFORE rendering
-// console.log("✅ VITE_API_URL:", import.meta.env.VITE_API_URL);
+console.log("Base URL:", import.meta.env.VITE_API_URL);
+
 console.log("app is running")
 
 ReactDOM.createRoot(document.getElementById("root")).render(

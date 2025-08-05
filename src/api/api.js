@@ -10,6 +10,7 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
+console.log('ertyu+' +api.defaults.baseURL)
 
 // POST: contact form
 export const submitContactForm = (data) => api.post('/contact', data);
@@ -29,7 +30,7 @@ export const getBlogDetails=()=> api.get('/blog');
 
 export const getBlogDetailsPage=()=> api.get('/blog/id');
 
-export const getdomesticDestinations=(type)=> api.get(`/image-gallary/:${type}`);
+export const getDestinationsData=(type)=> api.get(`/image-gallary/:${type}`);
 
 
 

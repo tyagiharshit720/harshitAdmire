@@ -21,21 +21,45 @@ const TravelGallery = () => {
   const [images, setImages] = useState([]);
   // console.log("images-->", images);
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const response = await travelGallery();
-        // console.log(response)
-        setImages(response?.data?.customerGalleryData[0].image);
-        console.log(response.data.customerGalleryData[0].image)
-        console.log(`Imgae => ${images}`)
-      } catch (error) {
-        console.error("Failed to fetch travel gallery:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchImages = async () => {
+  //     try {
+  //       const response = await travelGallery();
+  //       // console.log(response)
+  //       setImages(response?.data?.customerGalleryData[0].image);
+  //       console.log(response.data.customerGalleryData[0].image)
+  //       console.log(`Imgae => ${images}`)
+  //     } catch (error) {
+  //       console.error("Failed to fetch travel gallery:", error);
+  //     }
+  //   };
 
-    fetchImages();
-  }, []);
+  //   fetchImages();
+  // }, []);
+  useEffect(() => {
+  const fetchImages = async () => {
+    try {
+      const response = await travelGallery();
+
+      console.log("✅ Full API Response:", response);
+
+      const galleryData = response?.data?.customerGalleryData;
+
+      if (Array.isArray(galleryData) && galleryData.length > 0) {
+        console.log("✅ First Image:", galleryData[0].image);
+        setImages(galleryData[0].image);
+      } else {
+        console.warn("⚠️ customerGalleryData is empty or not an array");
+      }
+
+    } catch (error) {
+      console.error("❌ Failed to fetch travel gallery:", error);
+    }
+  };
+
+  fetchImages();
+}, []);
+
 
   const openImageModal = (image, index) => {
     setSelectedImage(image);

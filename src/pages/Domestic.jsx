@@ -8,7 +8,9 @@ import TravelGallery from "../Components/TravelGallery";
 import DestinationGrid from "../Components/destinations/DestinationGrid";
 import { domesticDestinations } from "../data/destinations";
 import HeroReusable from "../Components/heroSection/HeroReusable";
-// import { getDestinationsData } from "../api/api";
+import { getHeroSection } from "../api/api";
+
+import { getDestinationsData } from "../api/api";
 
 const Domestic = () => {
   const navigate = useNavigate();
@@ -16,6 +18,26 @@ const Domestic = () => {
   const [loading, setLoading] = useState(true);
   const [destinations, setDestinations] = useState([]);
 
+  // hero domestic
+  
+    useEffect(() => {
+      const fetchVideo = async () => {
+        try {
+          setLoading(true);
+          const { data } = await getHeroSection("domestic");
+          console.log(data);
+          setVideoUrl(data?.publicUrl[0]);
+        } catch (error) {
+          console.error("Error loading video:", error);
+          setVideoUrl(null); 
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchVideo();
+    }, []);
+  
   useEffect(() => {
     const fetchDomesticData = async () => {
       try {
